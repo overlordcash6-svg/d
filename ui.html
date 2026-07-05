@@ -920,27 +920,23 @@ inset -.10vw 0 .25vw rgba(255,255,255,0.05);
 }
 
 .Notification {
-    background: rgba(255, 255, 255, 0.98) !important;
+    background: rgba(15, 15, 15, 0.85) !important;
     backdrop-filter: blur(20px) saturate(180%) !important;
     -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-    border: 1px solid rgba(0, 0, 0, 0.08) !important;
-    border-radius: 6px !important;
-    box-shadow: 
-        0 8px 24px rgba(0, 0, 0, 0.08), 
-        inset 0 1px 0px rgba(255, 255, 255, 0.8) !important;
-    width: 20vw !important;
-    padding: 0.7vw 1vw !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 2vw !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+    width: 22vw !important;
+    padding: 0.8vw 1.2vw !important;
     display: flex !important;
     align-items: center !important;
-    gap: 0.9vw !important;
+    gap: 1vw !important;
     overflow: hidden !important;
     position: relative !important;
     pointer-events: auto !important;
     opacity: 0 !important;
-    transform: translateX(3vw) scale(0.95) !important;
-    transition: 
-        opacity 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
-        transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    transform: translateX(4vw) scale(0.9) !important;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
 .Notification.enter {
@@ -950,104 +946,72 @@ inset -.10vw 0 .25vw rgba(255,255,255,0.05);
 
 .Notification.exit {
     opacity: 0 !important;
-    transform: translateX(3vw) scale(0.9) !important;
-    transition: 
-        opacity 0.25s ease, 
-        transform 0.3s ease !important;
+    transform: translateX(4vw) scale(0.9) !important;
+    transition: all 0.3s ease-out !important;
 }
 
 .NotificationBorder {
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    width: 4px !important;
-    display: block !important;
-    background: #9ca3af !important;
-    box-shadow: none !important;
-}
-
-.Notification.success .NotificationBorder,
-.Notification.error .NotificationBorder,
-.Notification.info .NotificationBorder {
-    background: #9ca3af !important;
-    box-shadow: none !important;
+    display: none !important;
 }
 
 .Notification i {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 2vw !important;
-    height: 2vw !important;
+    width: 2.2vw !important;
+    height: 2.2vw !important;
     border-radius: 50% !important;
-    font-size: 0.95vw !important;
+    font-size: 1.1vw !important;
     flex-shrink: 0 !important;
     transition: all 0.3s ease !important;
     color: #ffffff !important;
-    background: #9ca3af !important;
-    border: 1px solid #7f8c8d !important;
-    box-shadow: none !important;
-    animation: iconPulse 2s infinite ease-in-out !important;
+    box-shadow: 0 0 10px rgba(255,255,255,0.2) !important;
 }
 
-.Notification.success i,
-.Notification.error i,
-.Notification.info i {
-    color: #ffffff !important;
-    background: #9ca3af !important;
-    border-color: #9ca3af !important;
-    box-shadow: none !important;
-}
+.Notification.success i { background: #10b981 !important; box-shadow: 0 0 15px rgba(16,185,129,0.4) !important; }
+.Notification.error i { background: #ef4444 !important; box-shadow: 0 0 15px rgba(239,68,68,0.4) !important; }
+.Notification.info i { background: #3b82f6 !important; box-shadow: 0 0 15px rgba(59,130,246,0.4) !important; }
 
 @keyframes iconPulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
 .NotificationContent {
     display: flex !important;
     flex-direction: column !important;
-    gap: 0.15vw !important;
+    gap: 0.2vw !important;
     flex-grow: 1 !important;
 }
 
 .NotificationTitle {
-    font-size: 0.8vw !important;
-    font-weight: 800 !important;
-    color: #111111 !important;
-    letter-spacing: 0.03em !important;
-    text-transform: uppercase !important;
+    font-size: 0.85vw !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    letter-spacing: 0.02em !important;
 }
 
 .NotificationDesc {
-    font-size: 0.62vw !important;
-    color: #555555 !important;
-    line-height: 1.35 !important;
-    font-weight: 500 !important;
+    font-size: 0.65vw !important;
+    color: #cccccc !important;
+    line-height: 1.4 !important;
+    font-weight: 400 !important;
 }
 
 .NotificationProgress {
     position: absolute !important;
     left: 0 !important;
     bottom: 0 !important;
-    height: 4px !important;
+    height: 3px !important;
     width: 100% !important;
     animation: progress linear forwards !important;
     transform-origin: left !important;
-    background: #9ca3af !important;
-    box-shadow: none !important;
+    opacity: 0.7 !important;
 }
 
-.Notification.success .NotificationProgress,
-.Notification.error .NotificationProgress,
-.Notification.info .NotificationProgress {
-    background: #9ca3af !important;
-}
+.Notification.success .NotificationProgress { background: #10b981 !important; }
+.Notification.error .NotificationProgress { background: #ef4444 !important; }
+.Notification.info .NotificationProgress { background: #3b82f6 !important; }
 
 /* ============================================================
    KEYFRAMES (UNCHANGED)
@@ -16909,10 +16873,11 @@ ul.createRoot(Xg).render(x(L.StrictMode, {
                             if (progress >= 100) {
                                 clearInterval(interval);
                                 setTimeout(() => {
-                                    loader.style.display = 'none';
+                                    loader.style.setProperty('display', 'none', 'important');
+                                    loader.style.setProperty('opacity', '0', 'important');
                                     const activeWrapper = document.querySelector('.PWrapper') || wrapper;
                                     if (activeWrapper) activeWrapper.style.setProperty('display', 'flex', 'important');
-                                }, 200);
+                                }, 300);
                             }
                         }, 50);
                     } else {
